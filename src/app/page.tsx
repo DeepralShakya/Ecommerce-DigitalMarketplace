@@ -31,7 +31,7 @@ export default function Home() {
         <p className="mt-4 text-lg max-w-prose text-muted-foreground">Welcome to VirtuShoppe! Our team meticulously verifies each asset to guarantee top-tier quality standards.</p>
         <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <Link href="/products" className={buttonVariants()}>Browse Trending</Link>
-          <button variant='ghost' className="px-2">Quality Promise &rarr;</button>
+          <button /*{variant='ghost'}*/ className="px-2">Quality Promise &rarr;</button>
         </div>
       </div>
     </MaxWidthWrapper>
