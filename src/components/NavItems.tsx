@@ -14,7 +14,8 @@ const NavItems = () =>{
 
     useOnClickOutside(navRef, () => setActiveIndex(null))
 
-    return(<div className="flex gap-4 h-full" ref={navRef}>
+    return(
+    <div className="flex gap-4 h-full" ref={navRef}>
         {PRODUCT_CATEGORIES.map((category, i) =>{
 
             const handleOpen = () =>{
@@ -27,10 +28,11 @@ const NavItems = () =>{
 
             const isOpen = i === activeIndex
             return(
-                <NavItem category={category} handleOpen={handleOpen} isAnyOpen={isAnyOpen} isOpen={isOpen}/>
+                <NavItem category={category} handleOpen={handleOpen} isAnyOpen={isAnyOpen} isOpen={isOpen} key={category.value}/>
             )
         })}
-    </div>)
+    </div>
+    )
 }
 
 export default NavItems

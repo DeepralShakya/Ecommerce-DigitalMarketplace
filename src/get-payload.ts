@@ -1,6 +1,6 @@
 import dotenv from "dotenv" 
 import path from "path"
-import payload from "payload"
+import payload, { Payload } from "payload"
 import { InitOptions } from "payload/config"
 
 dotenv.config({
