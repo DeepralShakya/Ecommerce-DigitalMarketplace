@@ -5,7 +5,7 @@ import { InitOptions } from "payload/config"
 import nodemailer from 'nodemailer'
 
 dotenv.config({
-    path: path.resolve(__dirname, "../.env")
+    path: path.resolve(__dirname, "../.env"),
 })
 
 const transporter = nodemailer.createTransport({
@@ -42,18 +42,18 @@ export const getPayloadClient = async ({
         return cached.client
     }
 
-    if(!cached.promise){
+    if (!cached.promise) {
         cached.promise = payload.init({
             email: {
                 transport: transporter,
-                fromAddress: "shakyadeepral44@gmail.com",
+                fromAddress: "hello@joshtriedcoding.com",
                 fromName: 'DigitalShop',
             },
             secret: process.env.PAYLOAD_SECRET,
             local: initOptions?.express ? false : true,
             ...(initOptions || {}),
-        })
-    }
+        });
+    }    
 
     try {
         cached.client = await cached.promise
