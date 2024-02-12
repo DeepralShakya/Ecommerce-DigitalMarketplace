@@ -9,7 +9,6 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {useForm} from 'react-hook-form'
-import { z } from 'zod'
 import { AuthCredentialsValidator, TAuthCredentialsValidator } from "@/lib/validators/account-credentials-validators"
 import { trpc } from "@/trpc/client"
 
@@ -19,11 +18,12 @@ const { register, handleSubmit, formState: {errors} } = useForm<TAuthCredentials
     resolver: zodResolver(AuthCredentialsValidator)
 })
 
-const { data } = trpc.anyApiRoute.useQuery()
-console.log(data)
+const {mutate, isLoading} = trpc.auth.createPayloadUser.useMutation({
+
+})
 
 const onSubmit = ({email, password}: TAuthCredentialsValidator) => {
-
+    mutate({email, password})
 }
 
     return <>
@@ -40,15 +40,17 @@ const onSubmit = ({email, password}: TAuthCredentialsValidator) => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col gap-2">
                             <div className="grid gap-1 py-2">
-                                <Label htmlFor="email">Email: </Label>
+                                <Label htmlFor="email">Email:</Label>
                                 <Input {...register("email")} className={cn({
                                     "focus-visible:ring-orange-400": errors.email
                                 })}
                                 placeholder="you@example.com"/>
                             </div>
                             <div className="grid gap-1 py-2">
-                                <Label htmlFor="email">Password: </Label>
-                                <Input {...register("password")} className={cn({
+                                <Label htmlFor="password">Password:</Label>
+                                <Input {...register("password")}
+                                    type="password"
+                                    className={cn({
                                     "focus-visible:ring-orange-400": errors.password
                                 })}
                                 placeholder="Password"/>
