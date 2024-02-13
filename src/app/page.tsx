@@ -1,5 +1,6 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { buttonVariants } from "@/components/ui/button";
+import ProductReel from "@/components/ProductReel";
+import { buttonVariants, Button } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
 
@@ -31,9 +32,11 @@ export default function Home() {
         <p className="mt-4 text-lg max-w-prose text-muted-foreground">Welcome to VirtuShoppe! Our team meticulously verifies each asset to guarantee top-tier quality standards.</p>
         <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <Link href="/products" className={buttonVariants()}>Browse Trending</Link>
-          <button /*{variant='ghost'}*/ className="px-2">Quality Promise &rarr;</button>
+          <Button variant='ghost' className="px-2">Quality Promise &rarr;</Button>
         </div>
       </div>
+
+      <ProductReel query={{sort: "desc", limit: 4}} href="/products" title='Brand New'/>
     </MaxWidthWrapper>
     <section className="border-t border-gray-200 bg-gray-50">
       <MaxWidthWrapper className="py-24">
