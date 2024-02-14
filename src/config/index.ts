@@ -1,21 +1,21 @@
 export const PRODUCT_CATEGORIES = [
     {
-        label:"UI kits",
-        value:"ui_kits" as const,
+        label: 'UI Kits',
+        value: 'ui_kits' as const,
         featured: [
             {
                 name: "Editor picks",
-                href: `/products?category=ui_kits`,
+                href: "#",
                 imageSrc: "/nav/ui-kits/mixed.jpg"
             },
             {
                 name: "New Arrivals",
-                href:'/products?category=ui_kits&sort=desc',
+                href:'#',
                 imageSrc: "/nav/ui-kits/blue.jpg"
             },
             {
                 name: "Best Seller",
-                href: '/products?category=ui_kits',
+                href: '#',
                 imageSrc: "/nav/ui-kits/purple.jpg"
             }
         ]

@@ -29,8 +29,10 @@ const ProductReel = (props: ProductReelProps) => {
     
     let map: (Product | null)[] = []
     if(products && products.length) {
+        console.log("products: ", products)
         map = products
     }else if (isLoading) {
+        console.log("products: ", products)
         map = new Array<null>(
             query.limit ?? FALLBACK_LIMIT
             ).fill(null)
