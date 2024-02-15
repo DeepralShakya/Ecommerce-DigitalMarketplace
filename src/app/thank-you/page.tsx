@@ -89,9 +89,9 @@ const ThankYouPage = async ({
               </p>
             ) : (
               <p className='mt-2 text-base text-muted-foreground'>
-                We appreciate your order, and we're
+                We appreciate your order, and we&apos;re
                 currently processing it. So hang tight and
-                we'll send you confirmation very soon!
+                we&apos;ll send you confirmation very soon!
               </p>
             )}
 

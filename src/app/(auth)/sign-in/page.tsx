@@ -99,7 +99,7 @@ const onSubmit = ({email, password}: TAuthCredentialsValidator) => {
                                 )}
                             </div>
                             <div>
-                                <Link href='/sign-up' className={buttonVariants({variant: "link", className: "gap-1"})}>Don't have an account? Sign-up
+                                <Link href='/sign-up' className={buttonVariants({variant: "link", className: "gap-1"})}>Don&apos;t have an account? Sign-up
                                     <ArrowRight className="h-4 w-4"/>
                                 </Link>
                             </div>   
