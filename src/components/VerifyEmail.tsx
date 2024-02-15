@@ -32,7 +32,7 @@ const VerifyEmail = ({token}: VerifyEmailProps) => {
                     {/* <Image src='/email_sent.jpg' fill alt="email sent"/> */}
                 </div>
 
-                <h3 className="font-bold text-2xl">You're all set!</h3>
+                <h3 className="font-bold text-2xl">You&apos;re all set!</h3>
                 <p className="text-muted-foreground text-center mt-1">Thank you for verifying your Email</p>
                 <Link className={buttonVariants({className: 'mt-4'})}  href='/sign-in'>Sign In</Link>
             </div>
@@ -44,7 +44,7 @@ const VerifyEmail = ({token}: VerifyEmailProps) => {
             <div className="flex flex-col items-center gap-2">
                 <Loader2 className="animate-spin h-8 w-8 text-zinc-300"/>
                 <h2 className="font-bold text-xl">Verifying...</h2>
-                <p className="text-muted-foreground text-sm">This won't take long.</p>
+                <p className="text-muted-foreground text-sm">This won&apos;t take long.</p>
             </div>
         )
     }
