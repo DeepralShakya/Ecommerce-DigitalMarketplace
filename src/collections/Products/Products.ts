@@ -32,8 +32,8 @@ export const Products: CollectionConfig = {
                 await stripe.products.create({
                   name: data.name,
                   default_price_data: {
-                    currency: 'NPR',
-                    unit_amount: Math.round(data.price * 1),
+                    currency: 'USD',
+                    unit_amount: Math.round(data.price * 100),
                   },
                 })
     
@@ -90,7 +90,7 @@ export const Products: CollectionConfig = {
             name: "price",
             label: "Price in NPR",
             min: 0,
-            max: 1000,
+            max: 100000,
             type: 'number',
             required: true
         },
