@@ -1,6 +1,5 @@
-// import Image from "next/image"
-
 import VerifyEmail from "@/components/VerifyEmail"
+import Image from "next/image"
 
 interface PageProps {
     searchParams: {[key: string]: string | string[] | undefined}
@@ -19,16 +18,16 @@ const VerifyEmailPage = ({searchParams}: PageProps) =>{
                 ) : (
                     <div className="flex h-full flex-col items-center justify-center space-y-1">
                         <div className="relative mb-4 h-60 w-60 text-muted-foreground">
-                            {/* <Image src='/email-sent.jpg' alt='email sent image' width={300} height={200} /> */}
+                            <Image src='/images/email-sent.jpg' alt='email sent image' width={300} height={200} />
                         </div>
                         <h3 className="font-bold text-2xl">Check your Email</h3>
                         {
                             toEmail ? (
                             <p className="text-muted-foreground text-center">
-                                We&apos;ve sent a verification link to{' '} <span className="font-semibold">{toEmail}</span>.
+                                We've sent a verification link to{' '} <span className="font-semibold">{toEmail}</span>.
                             </p> 
                             ) : (
-                            <p className="text-muted-foreground text-center">We&apos;ve sent a verification link to your email</p>
+                            <p className="text-muted-foreground text-center">We've sent a verification link to your email</p>
                         )}
                     </div>
                 )}
